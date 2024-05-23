@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nodeservice:
+    image: 'nodeservice:latest'
+    build:
+      context: ./NodeService
+    container_name: node-service-container
+    ports:
+      - "8080:8080"
+
+  eventservice:
+    image: 'eventservice:latest'
+    build:
+      context: ./EventService
+    container_name: event-service-container
+    ports:
+      - "8081:8081"
